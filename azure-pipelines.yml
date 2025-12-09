@@ -2,23 +2,13 @@
 trigger: 
 - none
 
-pool:
-  name: My_agent_pool
-  stagest:
+
+stages:
   - stage: one_stage
     jobs:
-    - job: one job
-    
-  steps:
-   - script: echo Hello from my first pipeline!
-
-
-
-
-
-
-
-
-
-
+    - job: one_job
+      steps:
+      - script: echo Hello from my first pipeline!
+pool:
+  name: My_agent_pool
 
