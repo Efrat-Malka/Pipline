@@ -11,7 +11,7 @@ parameters:
     default: 19
     
 varibales:
-  greet: 'hello ${{ parameters.name }}'
+ greet: 'hello ${{ parameters.my_name }}'
 
 
 
