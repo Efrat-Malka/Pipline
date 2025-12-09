@@ -1,0 +1,23 @@
+trigger: none
+pool:
+  name: My_agent_pool
+parameters:
+  - name: my_name
+    type: string
+    default: name
+
+  - name: age
+    type: string
+    default: 19
+    
+varibales:
+  greet: 'hello ${{ parameters.name }}'
+
+
+
+stages:
+  - stage: one_stage
+    jobs:
+    - job: one_job
+      steps:
+      - script: echo $(greet)
