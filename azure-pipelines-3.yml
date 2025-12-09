@@ -1,0 +1,65 @@
+trigger: none
+pool:
+  name: My_agent_pool
+
+parameters:
+  - name: run_stage_2
+    type: boolean
+    default: true
+    
+stages:
+  - stage: stage1
+    jobs:
+    - job: job1
+      steps:
+      - script: echo stage1 job1
+    - job: job2
+      steps:
+      - script: echo stage1 job2
+  - stage: stage2
+    condition: eq(${{ parameters.run_stage_2}} ,true)
+    jobs:
+    - job: job1
+      steps:
+      - script: echo stage2 job1
+    - job: job2
+      steps:
+      - script: echo stage2 job2
+
+
+
+
+
+
+    
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  - name: age
+    type: string
+    default: 19
+    
+varibales:
+ greet: 'hello ${{ parameters.my_name }}'
+
+
+
+stages:
+  - stage: one_stage
+    jobs:
+    - job: one_job
+      steps:
+      - script: echo $(greet)
