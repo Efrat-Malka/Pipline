@@ -28,38 +28,3 @@ stages:
 
 
 
-
-
-
-    
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  - name: age
-    type: string
-    default: 19
-    
-varibales:
- greet: 'hello ${{ parameters.my_name }}'
-
-
-
-stages:
-  - stage: one_stage
-    jobs:
-    - job: one_job
-      steps:
-      - script: echo $(greet)
